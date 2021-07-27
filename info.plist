@@ -44,7 +44,7 @@
 				<key>argumenttrimmode</key>
 				<integer>0</integer>
 				<key>argumenttype</key>
-				<integer>1</integer>
+				<integer>0</integer>
 				<key>escaping</key>
 				<integer>100</integer>
 				<key>keyword</key>
