@@ -35,6 +35,29 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>shortcuts run "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>5</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>89622087-1E5E-418B-B4C3-24565FCD0936</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>alfredfiltersresults</key>
 				<true/>
 				<key>alfredfiltersresultsmatchmode</key>
@@ -60,7 +83,19 @@
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>/usr/local/bin/php ./listShortcuts.php</string>
+				<string>printf "&lt;?xml version=\"1.0\" encoding=\"UTF-8\"?&gt;&lt;items&gt;"
+IFS=''
+shortcuts list |
+while read shortcut
+do
+    printf "&lt;item uid=\"%s\" valid=\"YES\" autocomplete=\"%s\"&gt;" $shortcut $shortcut
+    printf "&lt;title&gt;%s&lt;/title&gt;" $shortcut
+    printf "&lt;subtitle&gt;%s&lt;/subtitle&gt;" $shortcut
+    printf "&lt;icon&gt;sc-icon.png&lt;/icon&gt;"
+    printf "&lt;arg&gt;%s&lt;/arg&gt;" $shortcut
+    printf "&lt;/item&gt;"
+done
+echo "&lt;/items&gt;"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -70,7 +105,7 @@
 				<key>title</key>
 				<string>Shortcuts</string>
 				<key>type</key>
-				<integer>0</integer>
+				<integer>5</integer>
 				<key>withspace</key>
 				<false/>
 			</dict>
@@ -80,29 +115,6 @@
 			<string>E8B4AE7C-74DD-44D8-A49F-46903618D0CE</string>
 			<key>version</key>
 			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>shortcuts run "$1"</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>5</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>89622087-1E5E-418B-B4C3-24565FCD0936</string>
-			<key>version</key>
-			<integer>2</integer>
 		</dict>
 	</array>
 	<key>readme</key>
@@ -127,7 +139,7 @@
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>0.1</string>
+	<string>0.2</string>
 	<key>webaddress</key>
 	<string></string>
 </dict>
