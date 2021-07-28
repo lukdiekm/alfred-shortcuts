@@ -1,0 +1,1 @@
+shortcuts run "$1"
