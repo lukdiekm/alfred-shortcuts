@@ -1,6 +1,15 @@
+getShortcuts () {
+if [[ -z "$folder" ]]; then
+    shortcuts list
+else
+    shortcuts list --folder "$folder"
+fi
+}
+
 printf "<?xml version=\"1.0\" encoding=\"UTF-8\"?><items>"
 IFS=''
-shortcuts list |
+
+getShortcuts |
 while read shortcut
 do
     printf "<item uid=\"%s\" valid=\"YES\" autocomplete=\"%s\">" $shortcut $shortcut
