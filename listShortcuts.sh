@@ -2,7 +2,7 @@ getShortcuts () {
 if [[ -z "$folder" ]]; then
     shortcuts list
 else
-    shortcuts list --folder "$folder"
+    shortcuts list --folder-name "$folder"
 fi
 }
 
