@@ -13,6 +13,6 @@ start with `sc` and type space to see and run the shortcuts you have created in 
 if you only want to use shortcuts from a specific folder, add an environment variable `folder` in the workflow-config.
 
 ## questions?
-if you have and questions, problems or feature-ideas feel free to open a issue! 😊
+if you have and questions, problems or feature-ideas feel free to open an issue! 😊
 
 ![alfred-shortcupts](alfred-shortcuts.png)
