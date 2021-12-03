@@ -1,8 +1,15 @@
 getShortcuts () {
-if [[ -z "$folder" ]]; then
-    shortcuts list
-else
+if [[ ! -z "$folders" ]]; then
+    IFS=','
+    read -a arr <<<"$folders"
+    for folder in "${arr[@]}"; do
+        shortcuts list --folder-name "$folder"
+    done
+    IFS=''
+elif [[ ! -z "$folder" ]]; then
     shortcuts list --folder-name "$folder"
+else
+    shortcuts list
 fi
 }
 
