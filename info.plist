@@ -35,6 +35,29 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>./runShortcut.sh $@</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>5</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>89622087-1E5E-418B-B4C3-24565FCD0936</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>alfredfiltersresults</key>
 				<true/>
 				<key>alfredfiltersresultsmatchmode</key>
@@ -81,29 +104,6 @@
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>./runShortcut.sh $@</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>5</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>89622087-1E5E-418B-B4C3-24565FCD0936</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
@@ -127,7 +127,7 @@
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>0.4</string>
+	<string>0.5</string>
 	<key>webaddress</key>
 	<string></string>
 </dict>
