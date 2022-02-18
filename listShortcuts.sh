@@ -12,6 +12,8 @@ IFS=''
 getShortcuts |
 while read shortcut
 do
+    shortcut="${shortcut/&/&#38;}"
+    shortcut="${shortcut/\"/&#34;}"
     printf "<item uid=\"%s\" valid=\"YES\" autocomplete=\"%s\">" $shortcut $shortcut
     printf "<title>%s</title>" $shortcut
     printf "<subtitle>%s</subtitle>" $shortcut
